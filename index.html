@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Wikipedia-style Page</title>
+    <style>
+        /* Basic reset and layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-background iframe {
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+        }
+
+        /* Content Styling */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin: 1rem 0;
+        }
+
+        h1, h2 {
+            margin: 1rem 0 0.5rem;
+        }
+
+        p, ul, pre, blockquote {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        pre {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        mark {
+            background-color: yellow;
+            color: black;
+        }
+
+        del {
+            text-decoration: line-through;
+        }
+
+        ins {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- YouTube Video Background -->
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/Z90rTdVoomY?autoplay=1&mute=1&controls=0&loop=1&playlist=Z90rTdVoomY&modestbranding=1&showinfo=0&rel=0"
+                frameborder="0"
+                allow="autoplay"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Wikipedia-style Content -->
+    <div class="content">
+        <h1><b>Albert Einstein</b></h1>
+        <p><small>From Wikipedia, the free encyclopedia</small></p>
+        <hr>
+
+        <p><strong>Albert Einstein</strong> was a <em>theoretical physicist</em> widely acknowledged to be one of the greatest physicists of all time.</p>
+
+        <p>He is best known for developing the <u>theory of relativity</u>, but he also made important contributions to the development of the <mark>theory of quantum mechanics</mark>.</p>
+
+        <p>Einstein was born in <i>Ulm, Kingdom of Württemberg</i>, in the <abbr title="German Empire">G.E.</abbr> on 14 March 1879.</p>
+
+        <p>He published more than 300 scientific papers and over 150 non-scientific works. His intellectual achievements and originality have made the word <q>Einstein</q> synonymous with <strong>genius</strong>.</p>
+
+        <h2>Education</h2>
+        <p>He studied at the <cite>Swiss Federal Polytechnic</cite> in Zurich, graduating in 1900 with a degree in <code>Mathematics and Physics</code>.</p>
+
+        <h2>Famous Equation</h2>
+        <p>Einstein developed the mass–energy equivalence formula: <b>E</b> = <i>mc</i><sup>2</sup>.</p>
+
+        <h2>Later Years</h2>
+        <p>He moved to the United States in 1933 and took a position at the <strong>Institute for Advanced Study</strong> in Princeton, New Jersey.</p>
+        
+        <blockquote>
+            <p>"Imagination is more important than knowledge. For knowledge is limited." – <cite>Albert Einstein</cite></p>
+        </blockquote>
+
+        <h2>Scientific Contributions</h2>
+        <ul>
+            <li><b>Photoelectric effect</b></li>
+            <li><i>General relativity</i></li>
+            <li><u>Special relativity</u></li>
+            <li><mark>Brownian motion</mark></li>
+        </ul>
+
+        <h2>Mathematical Expression</h2>
+        <pre>
+E = mc²
+Where:
+E = energy
+m = mass
+c = speed of light
+        </pre>
+
+        <p>He lived in Princeton until his death in 1955. His brain was preserved for research, though this has led to some <del>controversy</del><ins>public debate</ins>.</p>
+
+        <p>Einstein's name is associated with many achievements in science, and he received the <strong>Nobel Prize in Physics</strong> in 1921 for his explanation of the photoelectric effect.</p>
+
+        <hr>
+        <p><small>Last edited on 7 July 2025.</small></p>
+    </div>
+
+</body>
+</html>
