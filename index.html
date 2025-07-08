@@ -1,134 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simple Calculator</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+<!-- saved from url=(0042)file:///C:/Users/sensa/Downloads/form.html -->
+<html lang="en"><head><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="" name="description"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta charset="utf-8"/>
+<!-- Title -->
+<title>VHNSNC</title>
+<!-- Favicon -->
+<link href="https://vhnsnc.edu.in/img/core-img/favicon.ico" rel="icon"/>
+<!-- Stylesheet -->
+<link href="C:\Users\sensa\Documents\form_files\style.css" rel="stylesheet"/>
+<!-- Manual Stylesheet-->
+<link href="C:\Users\sensa\Documents\man.css" rel="stylesheet"/>
+<style>
+</style>
+<script>
+function showHint3(str2)
+{
+var xmlhttp;
+if (str2.length==0)
+{
+document.getElementById("statediv3").innerHTML="";
+return;
+}
+if (window.XMLHttpRequest)
+{
+xmlhttp=new XMLHttpRequest();
+}
+else
+{
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getElementById("statediv3").innerHTML=xmlhttp.responseText;
+}
+}
+xmlhttp.open("GET","getfees.php?q="+str2,true);
+xmlhttp.send(null);
+}
 
-    .calculator {
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 320px;
-    }
+function showHint4(str2)
+{
+var xmlhttp;
+if (str2.length==0)
+{
+document.getElementById("statediv4").innerHTML="";
+return;
+}
+if (window.XMLHttpRequest)
+{
+xmlhttp=new XMLHttpRequest();
+}
+else
+{
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getElementById("statediv4").innerHTML=xmlhttp.responseText;
+}
+}
+xmlhttp.open("GET","getcourses.php?q="+str2,true);
+xmlhttp.send(null);
+}
 
-    .calculator input {
-      width: 100%;
-      height: 60px;
-      font-size: 24px;
-      text-align: right;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
+</script>
+<style>
+/* Responsive styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 10px;
+    word-break: break-word;
+}
+input[type="text"], textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+    .col-6, .col-12, .col-lg-8, .col-md-8, .col-md-4 {
+        width: 100% !important;
+        display: block !important;
     }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+    .container {
+        padding: 0 15px;
     }
-
-    .buttons button {
-      font-size: 18px;
-      padding: 15px;
-      border: none;
-      border-radius: 8px;
-      background-color: #eee;
-      cursor: pointer;
-      transition: background-color 0.3s;
+    .top-header-area .row {
+        flex-direction: column;
     }
-
-    .buttons button:hover {
-      background-color: #ddd;
+}
+</style>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 10px;
+    word-break: break-word;
+}
+input[type="text"], input[type="radio"], textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+input[type="radio"] {
+    width: auto;
+}
+@media (max-width: 768px) {
+    .col-6, .col-12, .col-lg-8, .col-md-8, .col-md-4 {
+        width: 100% !important;
+        display: block !important;
     }
-
-    .buttons .equal {
-      background-color: #4CAF50;
-      color: white;
+    .top-header-area .row {
+        flex-direction: column;
     }
-
-    .buttons .equal:hover {
-      background-color: #45a049;
+    .copywrite-text, .social-info {
+        text-align: center;
     }
-
-    .buttons .clear {
-      background-color: #f44336;
-      color: white;
-    }
-
-    .buttons .clear:hover {
-      background-color: #d32f2f;
-    }
-  </style>
+}
+</style>
 </head>
 <body>
-  <div class="calculator">
-    <input type="text" id="display" readonly>
-    <div class="buttons">
-      <button onclick="clearDisplay()" class="clear">C</button>
-      <button onclick="appendValue('/')">/</button>
-      <button onclick="appendValue('*')">*</button>
-      <button onclick="deleteLast()">⌫</button>
+<video autoplay="" class="video-bg" loop="" muted="">
+<source src="C:\Users\sensa\Videos\Captures\bgvideo.mp4" type="video/mp4"/>
+</video>
+<!-- Preloader -->
+<!-- /Preloader -->
+<!-- Header Area Start -->
+<header class="header-area">
+<!-- Search Form -->
+<!-- Top Header Area Start -->
+<div class="top-header-area">
+<div class="container">
+<div class="row">
+<div class="col-6">
+<div class="top-header-content">
+<i class="icon_mail"></i> <span class="spss">application form</span>
+</div>
+</div>
+<div class="col-6">
+<div class="top-header-content">
+<!-- Top Social Area -->
+<div class="top-social-area ml-auto">
+<a href="https://www.facebook.com/vhnsncofficial"><i aria-hidden="true" class="fa fa-facebook"></i></a>
+<a href="https://vhnsnc.edu.in/spotvhnsnc.php#"><i aria-hidden="true" class="fa fa-youtube"></i></a>
+<a href="https://vhnsnc.edu.in/spotvhnsnc.php#"><i aria-hidden="true" class="fa fa-instagram"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Header Area End -->
+<!-- Main Header Start -->
+</header>
+<!-- Header Area End -->
+<div class="roberto-news-area pt-50">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-12 col-lg-8">
+<div class="section-heading wow fadeInUp animated" data-wow-delay="100ms" style="text-align: center; word-break: break-word; padding: 10px;">
+<h6 align="center" style="font-size: 1rem; text-align: center; word-wrap: break-word;"> modified only for educational purpose by sarvesh kumar.j</h6>
+</div>
+<div class="blog-details-text" style="overflow-x:auto;min-height:500px">
+<div class="glass-card" style="max-width:auto;">
+<div class="wrapper">
+<div id="title"><span class="or">Online Registration</span></div>
+<form action="https://vhnsnc.edu.in/admission_reserve.php" method="post" name="ad">
+<table>
+<tbody><tr><td align="left"><b>Student Name</b></td></tr>
+<tr><td><input name="sname" required="" type="text"/></td></tr>
+<tr><td align="left"><b>Father's Name</b></td></tr>
+<tr><td><input name="fname" required="" type="text"/></td></tr>
+<tr><td align="left"><b>Address</b></td>
+</tr><tr> <td><textarea cols="20" name="address" required="" rows="4"></textarea></td></tr>
+<tr><td align="left"><b>Date of Birth (Ex: 15-05-2006)</b></td></tr>
+<tr><td><input name="dob" placeholder="DD-MM-YYYY" required="" type="text"/></td></tr>
+<tr><td align="left"><b>Roll No</b></td></tr>
+<tr> <td><input maxlength="9" name="rollno" pattern="^\d{2}[A-Za-z]{4}\d{3}$" required="" title="Please enter exactly 9 digits" type="text"/></td></tr>
+<!--    <tr><td align="left"><b>+2 Register No.</b></td></tr>
+                <tr><td><input type="text" name="hsc" pattern="\d{10}" maxlength="10" title="Please enter exactly 10 digits" required></td></tr> -->
 
-      <button onclick="appendValue('7')">7</button>
-      <button onclick="appendValue('8')">8</button>
-      <button onclick="appendValue('9')">9</button>
-      <button onclick="appendValue('-')">-</button>
-
-      <button onclick="appendValue('4')">4</button>
-      <button onclick="appendValue('5')">5</button>
-      <button onclick="appendValue('6')">6</button>
-      <button onclick="appendValue('+')">+</button>
-
-      <button onclick="appendValue('1')">1</button>
-      <button onclick="appendValue('2')">2</button>
-      <button onclick="appendValue('3')">3</button>
-      <button onclick="calculate()" class="equal" rowspan="2">=</button>
-
-      <button onclick="appendValue('0')" style="grid-column: span 2;">0</button>
-      <button onclick="appendValue('.')">.</button>
-    </div>
-  </div>
-
-  <script>
-    const display = document.getElementById('display');
-
-    function appendValue(val) {
-      display.value += val;
-    }
-
-    function clearDisplay() {
-      display.value = '';
-    }
-
-    function deleteLast() {
-      display.value = display.value.slice(0, -1);
-    }
-
-    function calculate() {
-      try {
-        display.value = eval(display.value);
-      } catch (e) {
-        display.value = 'Error';
-      }
-    }
-  </script>
-</body>
-</html>
+<tr><td align="left">
+<input class="button" id="save" name="save" type="submit" value="Save &amp; Next"/>
+</td>
+</tr></tbody></table>
+</form></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Copywrite Area -->
+<div class="container">
+<div class="copywrite-content">
+<div class="row align-items-center">
+<div class="col-12 col-md-8">
+<!-- Copywrite Text -->
+<div class="copywrite-text">
+<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright © <script>document.write(new Date().getFullYear());</script>20252025 All rights reserved | <a href="https://www.vhnsnc.edu.in/#" title="VHNSNC">VHNSNC</a> | Developed by <a href="https://www.vhnsnc.edu.in/digitech">VHNSNC Digitech</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</div>
+</div>
+<div class="col-12 col-md-4">
+<!-- Social Info -->
+<div class="social-info">
+<a href="https://play.google.com/store/apps/details?id=com.vhnsnc" target="_new"><i aria-hidden="true" class="fa fa-mobile"></i></a>
+<a href="https://www.facebook.com/vhnsncofficial" target="_new"><i aria-hidden="true" class="fa fa-facebook"></i></a>
+<a href="https://www.youtube.com/user/VHNSNCOFFICIAL" target="_new"><i aria-hidden="true" class="fa fa-youtube"></i></a>
+<a href="https://www.linkedin.com/school/vhnsncollege" target="_new"><i aria-hidden="true" class="fa fa-linkedin"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Area End -->
+<!-- **** All JS Files ***** -->
+<!-- **** All JS Files ***** -->
+<!-- jQuery 3.6.0 -->
+<script src="./form_files/3.6.0_jquery.min.js.download"></script>
+<!-- Popper -->
+<script src="./form_files/popper.min.js.download"></script>
+<!-- Bootstrap -->
+<script src="./form_files/bootstrap.min.js.download"></script>
+<!-- All Plugins -->
+<script src="./form_files/roberto.bundle.js.download"></script>
+<!-- Active -->
+<script src="./form_files/active.js.download"></script><a href="file:///C:/Users/sensa/Downloads/form.html#top" id="scrollUp" style="position: fixed; z-index: 2147483647; display: none;"><i <="" class="arrow_carrot-up" i=""></i></a><a href="https://vhnsnc.edu.in/spotvhnsnc.php#top" id="scrollUp" style="position: fixed; z-index: 2147483647;"><i <="" class="arrow_carrot-up" i=""></i></a>
+</body></html>
