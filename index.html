@@ -1,137 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Invoice</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6f8;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        .invoice-box {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            background: #ffffff;
-            border: 1px solid #dfe6ed;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-        .invoice-header {
-            background-color: #004080;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 320px;
+    }
 
-        .invoice-header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
+    .calculator input {
+      width: 100%;
+      height: 60px;
+      font-size: 24px;
+      text-align: right;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
 
-        .invoice-details {
-            margin: 20px 0;
-        }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
 
-        .invoice-details .row {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-        }
+    .buttons button {
+      font-size: 18px;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #eee;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    .buttons button:hover {
+      background-color: #ddd;
+    }
 
-        table th {
-            background-color: #004080;
-            color: white;
-            padding: 12px;
-            text-align: left;
-        }
+    .buttons .equal {
+      background-color: #4CAF50;
+      color: white;
+    }
 
-        table td {
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
+    .buttons .equal:hover {
+      background-color: #45a049;
+    }
 
-        .total {
-            text-align: right;
-            margin-top: 20px;
-            font-weight: bold;
-        }
+    .buttons .clear {
+      background-color: #f44336;
+      color: white;
+    }
 
-        .footer {
-            text-align: center;
-            font-size: 14px;
-            color: gray;
-            margin-top: 40px;
-        }
-
-    </style>
+    .buttons .clear:hover {
+      background-color: #d32f2f;
+    }
+  </style>
 </head>
 <body>
+  <div class="calculator">
+    <input type="text" id="display" readonly>
+    <div class="buttons">
+      <button onclick="clearDisplay()" class="clear">C</button>
+      <button onclick="appendValue('/')">/</button>
+      <button onclick="appendValue('*')">*</button>
+      <button onclick="deleteLast()">⌫</button>
 
-<div class="invoice-box">
-    <div class="invoice-header">
-        <h1>INVOICE</h1>
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('-')">-</button>
+
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="appendValue('+')">+</button>
+
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <button onclick="calculate()" class="equal" rowspan="2">=</button>
+
+      <button onclick="appendValue('0')" style="grid-column: span 2;">0</button>
+      <button onclick="appendValue('.')">.</button>
     </div>
+  </div>
 
-    <div class="invoice-details">
-        <div class="row">
-            <div><strong>Invoice #: </strong> INV-001</div>
-            <div><strong>Date: </strong> 07/07/2025</div>
-        </div>
-        <div class="row">
-            <div><strong>Bill To:</strong> Sarvesh Kumar</div>
-            <div><strong>Due Date: </strong> 14/07/2025</div>
-        </div>
-    </div>
+  <script>
+    const display = document.getElementById('display');
 
-    <table>
-        <thead>
-        <tr>
-            <th>Item Description</th>
-            <th>Qty</th>
-            <th>Unit Price (₹)</th>
-            <th>Total (₹)</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Notebook</td>
-            <td>2</td>
-            <td>50</td>
-            <td>100</td>
-        </tr>
-        <tr>
-            <td>Pen</td>
-            <td>5</td>
-            <td>10</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>Folder</td>
-            <td>3</td>
-            <td>20</td>
-            <td>60</td>
-        </tr>
-        </tbody>
-    </table>
+    function appendValue(val) {
+      display.value += val;
+    }
 
-    <div class="total">
-        Grand Total: ₹210
-    </div>
+    function clearDisplay() {
+      display.value = '';
+    }
 
-    <div class="footer">
-        Thank you for your business!
-    </div>
-</div>
+    function deleteLast() {
+      display.value = display.value.slice(0, -1);
+    }
 
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch (e) {
+        display.value = 'Error';
+      }
+    }
+  </script>
 </body>
 </html>
